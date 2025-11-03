@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Shop</title>
+<style>
+  body {
+    background: #2d2d2d;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .market {
+    width: 900px;
+    background: #7ecb36;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    overflow: hidden;
+    color: #000;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    background: #5ea12a;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    justify-content: space-between;
+  }
+
+  .tabs {
+    display: flex;
+    background: #d3ff8e;
+    border-bottom: 3px solid #5ea12a;
+  }
+
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-right: 1px solid #b5e97d;
+  }
+
+  .tab:hover, .tab.active {
+    background: #ffcf40;
+  }
+
+  .balance {
+    background: #4caf50;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .product {
+    background: #e3ffa9;
+    border: 2px solid #88b15c;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+
+  .product img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  .product h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+  }
+
+  .price {
+    color: #2b4d15;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .qty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+  }
+
+  .qty button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: #5ea12a;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .qty span {
+    width: 25px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .add-btn {
+    background: #4caf50;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .add-btn:hover {
+    background: #3a8d3c;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="market">
+  <div class="header">
+    <span>🛒 Market</span>
+    <span class="balance">$219.50</span>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">Products</div>
+    <div class="tab">Vending Machines</div>
+    <div class="tab">Storage</div>
+    <div class="tab">Decorations</div>
+  </div>
+
+  <div class="product-list">
+    <div class="product">
+      <img src="https://cdn-icons-png.flaticon.com/512/4359/4359962.png" alt="Bubble Gum">
+      <h3>Lovely Bubble Gum</h3>
+      <div class="price">$4.7</div>
+      <div class="qty">
+        <button onclick="changeQty(this, -1)">−</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" alt="Donut">
+      <h3>Donut</h3>
+      <div class="price">$5.2</div>
+      <div class="qty">
+        <button onclick="changeQty(this, -1)">−</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://cdn-icons-png.flaticon.com/512/1057/1057346.png" alt="Jelly Beans">
+      <h3>Jelly Beans</h3>
+      <div class="price">$4.9</div>
+      <div class="qty">
+        <button onclick="changeQty(this, -1)">−</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://cdn-icons-png.flaticon.com/512/415/415731.png" alt="Marshmallow">
+      <h3>Marshmallow</h3>
+      <div class="price">$5.5</div>
+      <div class="qty">
+        <button onclick="changeQty(this, -1)">−</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://cdn-icons-png.flaticon.com/512/590/590685.png" alt="Candy">
+      <h3>New Candy Cup</h3>
+      <div class="price">$5.7</div>
+      <div class="qty">
+        <button onclick="changeQty(this, -1)">−</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://cdn-icons-png.flaticon.com/512/1188/1188641.png" alt="Vanilla Cola">
+      <h3>Vanilla Cola</h3>
+      <div class="price">$3.4</div>
+      <div class="qty">
+        <button onclick="changeQty(this, -1)">−</button>
+        <span>0</span>
+        <button onclick="changeQty(this, 1)">+</button>
+      </div>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function changeQty(button, change) {
+  const span = button.parentElement.querySelector('span');
+  let qty = parseInt(span.textContent);
+  qty = Math.max(0, qty + change);
+  span.textContent = qty;
+}
+</script>
+
+</body>
+</html>
